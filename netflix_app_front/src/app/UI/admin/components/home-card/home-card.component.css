@@ -1,0 +1,42 @@
+.formCard {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.title {
+    color: var(--light);
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: 'Netflix Sans Medium', sans-serif;
+    font-size: 32px;
+}
+
+button {
+    width: 80%;
+    height: 50px;
+    font-family: 'Netflix Sans Light', sans-serif;
+    font-size: 17px;
+    background-color: var(--red) !important;
+}
+
+@media(min-width: 720px) {
+    .formCard {
+        width: 65%;
+        height: auto;
+        max-height: 600px;
+        display: flex;
+        align-items: center;
+        padding: 53px;
+        margin-top: -10px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 10em;
+    }
+}

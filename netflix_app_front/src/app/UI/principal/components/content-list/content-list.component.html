@@ -1,0 +1,6 @@
+<div class="principal-container">
+  <h1 class="title mb-4">{{title}}</h1>
+  <div *ngIf="user && user.favoriteList" class="box">
+    <app-content *ngFor="let content of getFavoriteContents()" [content]="content"></app-content>
+  </div>
+</div>

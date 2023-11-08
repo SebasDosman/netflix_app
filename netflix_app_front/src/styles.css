@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+  --bgColor: rgba(0, 0, 0, 0.8);
+  --bgGradient: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
+  --primary : #000;
+  --light   : #F3F3F3;
+  --dark    : #686868;
+  --dark-bold: #383434;
+  --dark-letter: #939393;
+  --red     : #E50914;
+  --font    : 'Roboto', sans-serif;
+}
+
+body{
+  background-color: #141414 ;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+pre{
+  color: white;
+  font-size: 10px;
+}
+
+h1{
+  color: white;
+}
+
+html, body {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;   
+  min-height: 100%; 
+}
+
+.buton { 
+  background-color: var(--red);
+}
+
+
+
+/* styles.css o styles.scss */
+
+/* Fuente Netflix Sans Bold */
+@font-face {
+  font-family: 'Netflix Sans Bold';
+  src: url('../src/assets/fonts/netflix-sans-font/NetflixSans-Bold.woff2') format('woff2'),
+       url('../src/assets/fonts/netflix-sans-font/NetflixSans-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+/* Fuente Netflix Sans Light */
+@font-face {
+  font-family: 'Netflix Sans Light';
+  src: url('../src/assets/fonts/netflix-sans-font/NetflixSans-Light.woff2') format('woff2'),
+       url('../src/assets/fonts/netflix-sans-font/NetflixSans-Light.otf') format('opentype');
+  font-weight: 300; /* Light */
+}
+
+/* Fuente Netflix Sans Medium */
+@font-face {
+  font-family: 'Netflix Sans Medium';
+  src: url('../src/assets/fonts/netflix-sans-font/NetflixSans-Medium.woff2') format('woff2'),
+       url('../src/assets/fonts/netflix-sans-font/NetflixSans-Medium.otf') format('opentype');
+  font-weight: 500; /* Medium */
+}
+
+/* Fuente Netflix Sans Regular */
+@font-face {
+  font-family: 'Netflix Sans Regular';
+  src: url('../src/assets/fonts/netflix-sans-font/NetflixSans-Regular.woff2') format('woff2'),
+       url('../src/assets/fonts/netflix-sans-font/NetflixSans-Regular.otf') format('opentype');
+  font-weight: normal;
+}
+
+

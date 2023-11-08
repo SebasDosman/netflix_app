@@ -1,0 +1,21 @@
+body{
+    background-color: #141414 ;
+    height          : auto      ;
+    position        : absolute  ;
+    top             : 0         ;
+}
+
+
+
+
+.contain-list{
+    position: relative;
+    top: -50px;
+}
+
+
+@media(max-width: 650px) {
+    .contain-list{
+        top: -50px;
+    }
+}

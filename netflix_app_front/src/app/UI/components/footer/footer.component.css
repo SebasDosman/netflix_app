@@ -1,0 +1,88 @@
+.footer {
+  font-family: 'Netflix Sans Light';
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-footer {
+  width: 80%;
+}
+
+.link {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sub-links ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sub-links a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.sub-links a:hover {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+.logos {
+  margin-bottom: 1.5rem;
+}
+
+.logos a{
+  padding: 10px;
+}
+
+.logo {
+  color: var(--light);
+}
+
+footer {
+  font-size: 11px;
+  color: var(--dark);
+  margin-bottom: 2rem;
+}
+
+footer a {
+  color: var(--dark);
+  text-decoration: none;
+}
+
+.user-links {
+  justify-content: space-between;
+}
+
+@media(max-width: 700px) {
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 500px) {
+  .logos {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+
+  .sub-links ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    font-size: 15px;
+  }
+}

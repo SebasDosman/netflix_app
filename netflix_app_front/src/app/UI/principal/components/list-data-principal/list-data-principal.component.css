@@ -1,0 +1,16 @@
+.principal-contain{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    color: white;
+    font-family: 'Netflix Sans Normal', sans-serif;
+    font-size: 1.3vw;
+    margin-top: 30px;
+}
+

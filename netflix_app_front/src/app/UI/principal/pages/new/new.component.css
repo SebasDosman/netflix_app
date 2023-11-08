@@ -1,0 +1,17 @@
+body{
+    background-color: #141414 ;
+    height          : auto      ;
+    padding-top: 70px;
+    padding-bottom: 500px;
+}
+
+.contain-list{
+    height: 100%;
+}
+
+
+@media(max-width: 650px) {
+    .contain-list{
+        margin-top: 70px;
+    }
+}

@@ -1,0 +1,36 @@
+<div    class="container-trailer"
+        >
+
+    <video  
+            loop
+            autoplay="autoplay"
+            data-autoplay="false"
+            preload="auto"
+            id="video"
+
+            [muted]="true"
+            (mouseenter)="onMouseEnter( $event )">
+
+            <source     *ngIf="content"
+                        [src]="content.trailer" 
+                        type="video/mp4">
+
+            "Tu navegador no soporta videos, por favor cambie a uno mas reciente"
+    </video>
+
+<app-info-principal-data        *ngIf="content"
+                                [content]="content"></app-info-principal-data>
+
+<div class="optional-data">
+        <div class="sounds" (click)="volumeOn.set(!volumeOn())">
+                <span   class="material-symbols-outlined volume-icon"
+                        *ngIf="!volumeOn()">
+                        volume_up
+                </span>
+                <span   class="material-symbols-outlined volume-icon"
+                        *ngIf="volumeOn()">
+                        volume_off
+                </span>
+        </div>
+</div>
+</div>

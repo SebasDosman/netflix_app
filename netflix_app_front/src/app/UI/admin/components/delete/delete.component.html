@@ -1,0 +1,10 @@
+<h1 class="content">{{title}}</h1>
+<div class="content text-light" >
+  <p>Are you sure you want to delete {{name}}?</p>
+</div>
+<div class="content mb-4" >
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-outline-light" (click)="close()">No, thanks</button>
+    <button class="btn btn-danger" color="accent" (click)="delete()">Delete</button>
+  </div>
+</div>

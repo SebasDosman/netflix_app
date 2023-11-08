@@ -1,0 +1,40 @@
+<app-net-loader *ngIf="!loaded"></app-net-loader>
+<div class="principal-container">
+  <img class="logo ml-4" src="../../../../assets/netflix.png" alt="netflix.png">
+
+  <div class="formCard animate__animated animate__fadeIn">
+
+    <h2 class="title mb-4">Sign In</h2>
+
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="submitForm()" autocomplete="off">
+
+      <input type="email" placeholder="Email or phone number" class="form-control input" formControlName="email">
+      <app-interruptor *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        mensajeError="Please enter a valid email or phone number.">
+      </app-interruptor>
+
+      <input formControlName="password" class="form-control input" type="password" placeholder="Password">
+      <app-interruptor *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        mensajeError="Your password must contain between 4 and 60 characters.">
+      </app-interruptor>
+
+      <button class="btn btn-danger mt-3">Sign In</button>
+
+      <div class="abajo row">
+
+        <div class="checkbox col">
+          <input class="check" type="checkbox" formControlName="recordar" checked>
+          <p class="mt-3">Remember me</p>
+        </div>
+
+        <div class="dere col">
+          <a class="help">Need help?</a>
+        </div>
+
+      </div>
+
+      <p class="registro">New to Neflix?&nbsp;<a class="register" routerLink="/auth/register">Sign up now.</a></p>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

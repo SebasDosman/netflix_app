@@ -1,0 +1,79 @@
+.principal-container{
+    width: 100%;
+    height: auto;
+    min-height: 70vh;
+  }
+  
+  .box {
+    display: grid;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-bottom: 3rem;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+  }
+  
+  .title {
+    padding-top: 60px;
+    font-family: 'Netflix Sans Normal', sans-serif;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    margin-left: -10px;
+  }
+  
+  .notfound{
+    width: 100%;
+    min-height: 100%;
+    padding-top: 8.8vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subnotfound > p{
+    margin: 0;
+    line-height: 3vh;
+  }
+
+  .err-d{
+    color: #ffffff;
+    font-family: 'Netflix Sans Light', sans-serif;
+    font-size: 60%;
+  }
+
+
+
+  @media(max-width: 900px) {
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
+    }
+  }
+  
+  @media(max-width: 700px) {
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+  }
+  
+  @media(max-width: 500px) {
+    .title {
+      display: flex;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
+    .box {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center;
+    }
+  }
+  

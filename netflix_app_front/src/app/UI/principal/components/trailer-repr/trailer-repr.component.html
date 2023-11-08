@@ -1,0 +1,114 @@
+<div class="container">
+        <span   class="material-symbols-outlined back-arrow"
+                (click)="getBack()"
+                *ngIf="showControls()">
+                arrow_back
+        </span>
+        
+
+    <video  data-autoplay="true"
+            preload="auto"
+            id="video"
+            (click)="pauseRewind()"
+            (canplay)="setSeconds()"
+            #videoElement
+            (timeupdate)="onTimeUpdate($event)"
+            (mouseleave)="hideControlsStartTimer()"
+            (mousemove)="showControlsStartTimer()">
+
+            <source [src]="data.trailer" 
+                    type="video/mp4">
+
+            "Tu navegador no soporta videos, por favor cambie a uno mas reciente"
+    </video>
+ 
+    <div        class="controls"
+                *ngIf="showControls()">
+
+        <div class="timeline">
+            <div class="bar">
+                <input  class="inner" 
+                        type="range" 
+                        min="0" 
+                        [max]="videoSeconds()" 
+                        step="0.001" 
+                        [(ngModel)]="currentTimeVar"
+                        (input)="timeChanged($event)">
+            </div>    
+            <div class="time">
+                {{ videoSeconds() - currentTime() | secondsToHour }}
+            </div>
+        </div>
+
+        <div class="buttons">
+
+                <div class="leftbuttons">
+                        <button *ngIf="isPaused()"
+                                (click)="play( $event )">
+                        
+                                <span class="material-symbols-outlined">
+                                        play_arrow
+                                </span>
+                        </button>
+
+                        <button *ngIf="!isPaused()"
+                                (click)="pause($event)">
+
+                                <span class="material-symbols-outlined">
+                                        pause
+                                </span>
+                        </button>
+
+                        <button (click)="rewind( $event )">
+
+                                <span class="material-symbols-outlined">
+                                        rotate_left
+                                </span>
+                        </button>
+
+                        <button (click)="pass( $event )">
+                                <span class="material-symbols-outlined">
+                                        rotate_right
+                                </span>
+                        </button>
+
+                        <div class="volumeOpt" (mouseenter)="showVolumeBar()">
+                                <span class="material-symbols-outlined">
+                                        volume_up
+                                </span>
+                        </div>
+                        <input  type    ="range" 
+                                min     ="0" 
+                                max     ="1"  
+                                step    ="0.01" 
+                                value   ="0.5"
+                                [(ngModel)]     ="volumen" 
+                                (input)         ="setVolume(volumen)"
+                                class           ="volumeControl"
+                                *ngIf           ="showVolume()"
+                                (mouseleave)="notShowVolumeBar()">
+                </div>
+
+                <div class="middleinfo">
+                        <h1>{{ data.title }}</h1>
+                </div>
+
+                <div class="rightbuttons">
+                        <button *ngIf="!isFullScreen()"
+                                (click)="fullScreen( $event )">
+                                <span class="material-symbols-outlined">
+                                        fullscreen
+                                </span>
+                        </button>
+
+                        <button *ngIf="isFullScreen()"
+                                (click)="fullScreenExit( $event )">
+                                <span class="material-symbols-outlined">
+                                        fullscreen_exit
+                                </span>
+                        </button>
+                </div>
+        </div>
+        
+    </div>
+</div>

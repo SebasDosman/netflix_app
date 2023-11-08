@@ -1,0 +1,15 @@
+<div class="video-desc">
+    <h1>{{ content.title }}</h1>
+    <div class="options">
+            <button (click)="play()"><span class="material-symbols-outlined play">
+                    play_arrow
+                    </span> Play</button>
+            <button (click)="like()" *ngIf="!liked"> <span class="material-symbols-outlined error" >
+                thumb_up
+                </span> </button>
+
+            <button (click)="like()" *ngIf="liked"><span class="material-symbols-outlined error">
+                do_not_disturb_on
+            </span> </button>
+    </div>
+</div>

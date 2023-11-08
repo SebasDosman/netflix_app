@@ -1,0 +1,12 @@
+<div class="principal-contain" *ngIf="tagsObjects">
+
+    <div *ngIf="contentList && contentList.length > 0">
+        <p class="title">Continue watching {{ name }}</p>
+        <app-carrousel-data [content]="contentList"></app-carrousel-data>
+    </div>
+
+    <div *ngFor="let item of listTags">
+        <p class="title">{{ item }}</p>
+        <app-carrousel-data [content]="tagsObjects[item]"></app-carrousel-data>
+    </div>
+</div>

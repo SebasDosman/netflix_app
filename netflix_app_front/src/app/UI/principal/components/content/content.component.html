@@ -1,0 +1,79 @@
+<div class="card-content" (mouseleave)="muteVideo()">
+  
+  <a>
+    
+    <img [src]="content?.image" alt=""/>
+
+    <video #videoElement 
+            loop 
+            data-autoplay="false"
+            preload="auto"
+            id="video"
+            [muted]="true"
+            (mouseenter)="onMouseEnter($event)">
+            <source [src]="content?.trailer" 
+                    type="video/mp4">
+
+            "Tu navegador no soporta videos, por favor cambie a uno mas reciente"
+    </video>
+
+    <div class="video-desc">
+      <h6>{{ content?.title }}</h6>
+    </div>
+
+    <div class="sounds">
+      <span class="material-symbols-outlined volume-icon"
+        *ngIf="!volumeOn"
+        (click)="toggleVolume($event)">
+        volume_up
+      </span>
+      <span class="material-symbols-outlined volume-icon"
+          *ngIf="volumeOn"
+          (click)="toggleVolume($event)">
+          volume_off
+      </span>
+    </div>
+  
+  </a>
+
+  <div class="info">
+    <span (click)="play()" class="material-symbols-outlined play">play_circle</span> 
+
+    <button *ngIf="!liked" (click)="like()">
+      <span class="material-symbols-outlined error" >
+        thumb_up
+      </span>
+    </button>
+    <button (click)="like()" *ngIf="liked">
+      <span class="material-symbols-outlined error">
+          do_not_disturb_on
+      </span>
+    </button>
+
+    <span class="material-symbols-outlined expand" (click)="openInfo()">
+      expand_circle_down
+    </span>
+
+  </div>
+
+  <div class="description">
+
+    <div class="clasificacion">
+
+      <span class="match">{{ matchNumber }}% for you</span>
+      <div class="edad">
+        <span class="age">{{ age }}+</span>
+      </div>
+      <span class="duration">{{ content?.duration }}</span>
+      <span class="hd_info">HD</span>
+
+    </div>
+
+    <div class="genre">
+      <span *ngFor="let genre of getGenres(); last as isLast">{{ genre.name }}<ng-container *ngIf="!isLast"> •</ng-container></span>
+    </div>
+    
+
+  </div>
+
+</div>

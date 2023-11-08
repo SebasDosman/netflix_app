@@ -1,0 +1,5 @@
+<app-navbar></app-navbar>
+<app-net-loader *ngIf="!loaded"></app-net-loader>
+<div class="principal-container">
+    <app-content-list [title]="title" [contents]="contents" [user]="user" [loaded]="loaded"></app-content-list>
+<app-footer></app-footer>

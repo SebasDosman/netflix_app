@@ -1,0 +1,71 @@
+.d-flex button{
+  width: 100%;
+}
+
+.content {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.content .d-flex {
+  gap: 2em;
+}
+
+.buton {
+background-color: var(--red);
+}
+
+.btn:disabled {
+background-color: #424242;
+}
+
+.icon-selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-selection .icon-label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-selection .icon-label input {
+  display: none;
+}
+
+.icon-selection .icon-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.icon-selection input[type="radio"]:checked+.icon-image {
+  border-color: var(--red);
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-selection .icon-label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-selection .icon-label input {
+  display: none;
+}
+
+.icon-selection .icon-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.icon-selection input[type="radio"]:checked+.icon-image {
+  border-color: var(--red);
+}

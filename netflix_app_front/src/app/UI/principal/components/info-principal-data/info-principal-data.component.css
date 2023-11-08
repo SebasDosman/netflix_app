@@ -1,0 +1,143 @@
+
+
+
+
+.video-desc{
+    position: absolute  ;
+    bottom: 15%;
+    left    : 4%      ;
+    color   : white   ;
+    font-family: 'Netflix Sans Light', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: normal;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.45);
+    letter-spacing: 0;
+    width: 60%;
+}
+
+.video-desc > h1{
+    font-size: 5vw;
+    font-weight: 800;
+    font-family:'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    line-height: 4vw;
+}
+
+
+
+
+.options{
+    margin-top: 4%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+}
+
+.options > button{
+    font-family: 'Netflix Sans Normal', sans-serif;
+    height: 2.8vw;
+    border-radius: 5px;
+    border: none;
+    font-weight: 400;
+    user-select: none;
+    word-break: break-word;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    padding-left: 0.3rem;
+}
+
+.fa-circle-exclamation{
+    color:  rgba(109, 109, 110, 0.7);
+    filter: invert(100%);
+
+}
+
+.options >button:nth-child(1){
+    width: 8.2vw;
+    background-color: #fff;
+    color: black;
+}
+
+.options >button:nth-child(2){
+    width: 2.8vw;
+    border: 1px solid white;
+    border-radius: 30px;
+    background-color: rgba(36, 36, 36, 0.7);
+    color: white;
+    padding: 0;
+}
+
+
+
+.play{
+    font-size: 2.8vw;
+}
+
+.error{
+    font-size: 1.2vw;
+}
+
+
+
+.play{
+  font-variation-settings:
+  'FILL' 100,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.options >button:nth-child(1):hover{
+    background-color: #d0cccc;
+}
+
+.options >button:nth-child(2):hover{
+    background-color: rgba(109, 109, 110, 0.3); 
+}
+
+
+
+@media only screen and (min-width : 850px) {
+
+    .video-desc > h1{
+        font-size: 50px;
+        line-height: 40px;
+    }
+
+    .options{
+        gap: 20px;
+    }
+    
+    .options > button{
+        min-width: 125px;
+        max-width: 125px;
+        height: 45px;
+    }
+
+    .options >button:nth-child(1){
+        font-size: 20px;
+    }
+
+    .options >button:nth-child(2){
+        min-width: 45px;
+        max-width: 45px;
+    }
+    
+    .play{
+        font-size: 40px;
+    }
+    
+    .error{
+        font-size: 20px;
+    }
+}
+

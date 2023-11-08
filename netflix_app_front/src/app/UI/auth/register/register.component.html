@@ -1,0 +1,68 @@
+<app-net-loader *ngIf="!loaded"></app-net-loader>
+<div class="contenedor-principal">
+
+  <div class="navbar row">
+    <img class = "logo col" src="../../../../assets/netflix.png" alt="netflix.png">
+    <button class="buton btn btn-danger col" routerLink="/auth">Login</button>
+  </div>
+
+  <div class="contenedor-form row">
+
+    <div class="izquierda col animate__animated animate__backInLeft">
+
+      <h1>Unlimited movies, series and more</h1>
+      <h3>Enjoy wherever you want. Cancel whenever you want.</h3>
+      <h5>Want to watch Netflix now? Enter your email to create an account or restart your Netflix membership.</h5>
+
+    </div>
+
+    <div class="derecha col animate__animated animate__backInRight">
+
+      <div class="title">
+        <h2>Sing up</h2>
+      </div>
+
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="submitForm()" autocomplete="off">
+
+        <input placeholder=" Name" class="form-control mt-3 input" type="text" formControlName="name" autocomplete="off">
+        <app-interruptor *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+                         mensajeError="Please enter a valid name.">
+        </app-interruptor>
+
+        <input placeholder=" Last name" class="form-control mt-3 input" type="text" formControlName="lname">
+        <app-interruptor     *ngIf="registerForm.get('lname')?.invalid && registerForm.get('lname')?.touched"
+                             mensajeError="Please enter a valid last name.">
+        </app-interruptor>
+
+        <input type="email" placeholder=" Email or phone number" class="form-control mt-3 input" formControlName="email">
+        <app-interruptor *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+                                  mensajeError="Please enter a valid email or phone number.">
+        </app-interruptor>
+
+        <div class="icon-selection mt-3">
+          <label *ngFor="let icon of icons; let i = index" class="icon-label">
+            <input type="radio" [value]="icon" formControlName="selectedIcon">
+            <img [src]="icon.url" [alt]="icon.name" class="icon-image">
+          </label>
+        </div>
+
+        <input type="password" placeholder=" Password" class="form-control mt-3 input" formControlName="password">
+        <app-interruptor *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                        mensajeError="Your password must contain between 4 and 60 characters.">
+        </app-interruptor>
+
+        <input type="password" placeholder=" Confirm password" class="form-control mt-3 input" formControlName="confirmPassword">
+        <app-interruptor *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched"
+                          mensajeError="Your passwords must be the same.">
+        </app-interruptor>
+
+        <button class="btn btn-danger mt-3">Register</button>
+      </form>
+
+    </div>
+
+  </div>
+
+  <app-footer></app-footer>
+
+</div>

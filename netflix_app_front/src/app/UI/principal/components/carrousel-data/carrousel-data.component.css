@@ -1,0 +1,56 @@
+.contenedor-principal{
+    display         : flex  ;
+    flex-direction  : row   ;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.box {
+    display: grid;
+    width: 100%;
+    height: auto;
+    height: 140px;
+  }
+
+app-content{
+    width: 200px;
+}
+app-content:hover{
+    z-index: 11;
+    padding-left: 10%;
+  
+}
+
+button{
+    background: hsla(0,0%,8%,.5);
+    border: none;
+    width: 40px;
+    height: auto;
+    border-radius: 3px;
+}
+
+button:hover{
+    color: white;
+    font-size: 50px;
+    z-index: 12;
+}
+
+.flecha-izquierda{
+    position: absolute;
+    height: 115px;
+    left: 0;
+}
+
+.flecha-derecha{
+    position: absolute;
+    height: 115px;
+    right: 0;
+}
+
+@media(max-width: 1000px) {
+    button{
+        color: white;
+    }
+  }

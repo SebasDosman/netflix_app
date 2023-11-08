@@ -1,0 +1,20 @@
+.d-flex button{
+    width: 100%;
+}
+
+.content {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.content .d-flex {
+    gap: 2em;
+}
+
+.buton {
+  background-color: var(--red);
+}
+
+.btn:disabled {
+  background-color: #424242;
+}

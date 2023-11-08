@@ -1,0 +1,17 @@
+<div    class="principal-container"
+         *ngIf="showModal"
+        (click)="closeModal()">
+</div>
+
+<div    class="submodal-principal" 
+        *ngIf="showModal">
+        
+        <app-trailer-preview [content]="localCont!"></app-trailer-preview>
+        <app-info-secundario-data [content]="localCont!"></app-info-secundario-data>
+
+        <div class="close_cont" (click)="closeModal()">
+                <span class="material-symbols-outlined">
+                        close
+                </span>
+        </div>
+</div>

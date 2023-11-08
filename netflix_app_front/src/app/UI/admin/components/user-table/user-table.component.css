@@ -1,0 +1,76 @@
+.card {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 70%;
+    max-height: auto;
+    padding: 2em;
+    margin-bottom: 7em;
+}
+
+.title {
+    color: var(--light);
+    letter-spacing: 1px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-family: 'Netflix Sans Medium', sans-serif;
+    font-size: 32px;
+}
+
+.arriba {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arriba button {
+    width: 10em;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+
+table {
+    overflow-x: auto;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+td img {
+    padding: .5em;
+    width: 4em;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    font-family: 'Netflix Sans Light', sans-serif;
+    font-size: 17px;
+    background-color: var(--red) !important;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+}
+
+td a {
+    cursor: pointer;
+}

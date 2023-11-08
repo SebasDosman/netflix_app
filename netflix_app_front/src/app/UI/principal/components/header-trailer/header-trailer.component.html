@@ -1,0 +1,49 @@
+<div    class="container-trailer"
+        >
+
+    <video  loop  
+            data-autoplay="false"
+            preload="auto"
+            id="video"
+
+            [muted]="true"
+            (mouseenter)="onMouseEnter( $event )">
+
+            <source     
+                        [src]="randomData()?.trailer" 
+                        type="video/mp4">
+
+            "Tu navegador no soporta videos, por favor cambie a uno mas reciente"
+    </video>
+
+<div class="video-desc">
+        <h1>{{ randomData()?.title }}</h1>
+        <p>{{ randomData()?.description}}</p>
+        <div class="options">
+                <button (click)="play()"><span class="material-symbols-outlined play">
+                        play_arrow
+                        </span> Play</button>
+                <button (click)="openInfo()"> <span class="material-symbols-outlined error">
+                        error
+                        </span> More Info</button>
+        </div>
+</div>
+
+
+<div class="optional-data">
+        <div class="sounds" (click)="volumeOn.set(!volumeOn())">
+                <span   class="material-symbols-outlined volume-icon"
+                        *ngIf="!volumeOn()"
+                        >
+                        volume_up
+                </span>
+                <span   class="material-symbols-outlined volume-icon"
+                        *ngIf="volumeOn()">
+                        volume_off
+                </span>
+        </div>
+        <div class="clasification">
+                {{ randomData()?.classification}}+
+        </div>
+</div>
+</div>

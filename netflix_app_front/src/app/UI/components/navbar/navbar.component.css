@@ -1,0 +1,331 @@
+/* Estilos generales para la barra de navegación */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: none;
+  justify-content: space-between;
+  padding: 0 3%;
+  height: 68px;
+  position: fixed;
+  z-index: 99;
+  
+}
+
+.navbar-scroll {
+  background-color: rgb(20, 20, 20);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+  transition: background-color .3s ease;
+}
+
+/* Estilos para la parte izquierda de la barra de navegación */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para los enlaces principales */
+.links ul {
+  display: flex;
+  list-style: none;
+  margin-top: 1em;
+}
+
+.links ul li {
+  margin-right: 1em;
+}
+
+.activo {
+  font-weight: 600;
+  cursor: default;
+}
+
+.activo:hover {
+  color: #E5E5E5;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #E5E5E5;
+  font-size: 13px;
+  transition: color 0.4s;
+}
+
+a:hover {
+  color: #b3b3b3;
+}
+
+/* Estilos para el logotipo en la barra de navegación */
+.logo-navbar img {
+  width: 7.5em;
+  margin-right: 10px;
+}
+
+/* Estilos para la parte derecha de la barra de navegación */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+
+}
+
+.buscador:focus {
+  border: none;
+  outline: none;
+}
+
+/* Estilos para el botón "Explorar" en dispositivos móviles */
+.explore-button {
+  display: none;
+}
+
+/* Estilos para el icono de búsqueda y el campo de búsqueda */
+.buscador {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+/* .buscador.activo {
+  border: 1px solid white;
+} */
+
+.btn{
+  width: 100%;
+  background-color: var(--red);
+}
+
+.search {
+  color: #E5E5E5;
+}
+
+.buscador i {
+  color: #E5E5E5;
+  margin-right: 10px;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.buscador {
+  cursor: pointer;
+}
+
+/* Estilos para la imagen de perfil en la parte derecha */
+.perfil img {
+  width: 2.5em;
+  height: 2.5em;
+}
+
+/* Estilos para el campo de búsqueda en la barra de navegación */
+.buscador input {
+  height: 2em;
+  background-color: #000;
+  outline: none;
+  border: 0px;
+  font-size: 1em;
+  padding: 1em;
+}
+
+input::placeholder {
+  color: #b3b3b3;
+}
+
+/* Estilos para el menú desplegable del perfil de usuario */
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  background-color: rgba(0,0,0,.9);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {
+  font-size: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+
+.menu ul a {
+  color: #E5E5E5;
+}
+
+.menu {
+  padding: 0 1.5em;
+}
+
+.menu li {
+  text-align: center;
+}
+
+.menu li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Estilos para la imagen de perfil en la parte derecha */
+.perfil-imagen {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.perfil img {
+  margin-right: 10px;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 3px;
+}
+
+.perfil ul {
+  color: #E5E5E5;
+}
+
+.perfil i {
+  color: #E5E5E5;
+}
+
+/* Estilos para pantallas pequeñas (celulares) */
+@media (max-width: 931px) {
+  .navbar {
+    height: 54px;
+    padding: 0 2%;
+  }
+
+  .logo-navbar img {
+    width: 6em;
+  }
+
+  .explore-button {
+    display: block;
+    cursor: pointer;
+    color: #E5E5E5;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .navbar-right {
+    margin-right: 0;
+    flex-wrap: wrap;
+  }
+
+  .buscador,
+  .perfil {
+    margin-right: 1rem;
+  }
+
+  .menu {
+    right: 80%;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-menu a {
+    color: #E5E5E5;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .mobile-menu li {
+    margin: 8px 0;
+  }
+
+  .mobile-menu:not(.hidden) {
+    display: block;
+    position: absolute;
+    top: 54px;
+    right: 60%;
+    padding: 0 3em;
+    background-color: rgba(20, 20, 20, 0.7);
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Estilos para tablets y pantallas más grandes (768px en adelante) */
+@media (min-width: 932px) {
+  .logo-navbar img {
+    width: 7.5em;
+  }
+
+  .links {
+    display: block;
+  }
+
+  .navbar-right {
+    margin-right: 2em;
+    flex-wrap: nowrap;
+  }
+
+  .buscador,
+  .perfil {
+    margin-right: 1rem;
+  }
+
+  .buscador i,
+  .perfil img {
+    font-size: 24px;
+  }
+
+  .buscador input {
+    height: 2em;
+    font-size: 1em;
+  }
+
+  .menu {
+    top: 83px;
+    right: 8%;
+    width: auto;
+  }
+
+  .perfil i {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 930px) {
+  .menu {
+    margin-top: 1em;
+    right: 4%;
+  }
+
+}
+
+@media (max-width: 560px) {
+  .buscador input{
+    width: 8em;
+  }
+}
+
+@media (max-width: 468px) {
+  .buscador input{
+    width: 3em;
+  }
+}
+

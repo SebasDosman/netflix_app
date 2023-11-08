@@ -1,0 +1,71 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <div class="logo-navbar">
+      <img src="./assets/netflix.png" alt="">
+    </div>
+    <div class="links">
+      <ul>
+        <li *ngFor="let link of links()">
+          <a [routerLink]="[link.url]">{{ link.title }}</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Botón "Explorar" solo en dispositivos móviles -->
+    <div class="explore-button" (click)="toggleMobileMenu()" *ngIf="isMobile">
+      Explore
+    </div>
+  </div>
+  <div class="navbar-right">
+    <!-- Search -->
+    <div class="buscador" id="buscador" (click)="toggleSearch()">
+      <i class="fa-solid fa-magnifying-glass" id="search-icon" [ngClass]="{ 'active': !searchHidden }"></i>
+
+      <input  autocomplete="none"
+              type="text"
+              id="search-input"
+              placeholder="Títulos, personas, géneros"
+              class="search"
+              [ngClass]="{ 'hidden': searchHidden, 'focused': searchHidden  }"
+              [(ngModel)]="searchQuery"
+              (input)="onSearchInput()">
+    </div>
+    <div class="perfil" id="perfil" (click)="toggleMenu()">
+      <div class="perfil-imagen" id="menu-toggle">
+        <img src="{{ icon }}">
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+      <div class="menu" id="menu" [ngClass]="{ 'hidden': menuHidden }">
+        <ul>
+          <li>
+            <p class="text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+              &nbsp; {{ username }}
+          </li>
+          <hr>
+          <li>
+            <a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+              </svg>
+              &nbsp; {{ email }}
+            </a>
+          </li>
+          <hr>
+          <li>
+            <button class="btn btn-danger" (click) = "logOut()">Log Out</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Menú desplegable para dispositivos móviles -->
+  <div class="mobile-menu" [ngClass]="{ 'hidden': mobileMenuHidden }">
+    <ul>
+      <li *ngFor="let link of links()">
+        <a [routerLink]="[link.url]">{{ link.title }}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

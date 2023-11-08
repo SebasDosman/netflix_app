@@ -1,0 +1,125 @@
+<div mat-dialog-title>
+    <h1>{{data ? 'Edit': 'Add'}} Content</h1>
+</div>
+<form [formGroup]="contentForm" (ngSubmit)="onFormSubmit()">
+    <div class="content">
+        <div class="row">
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title" type="text" placeholder="Ex. Fast and Furious 8">
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Trailer</mat-label>
+                    <input matInput formControlName="trailer" type="text" placeholder="Trailer link">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Image</mat-label>
+                <input matInput formControlName="image" type="text" placeholder="Image link">
+            </mat-form-field>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Release Date</mat-label>
+                    <input matInput formControlName="releaseAt" [matDatepicker]="picker">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Classification</mat-label>
+                    <mat-select formControlName="classification">
+                        <mat-option *ngFor="let classification of [0, 7, 10, 13, 16, 18]" [value]="classification">{{
+                            classification }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Duration</mat-label>
+                    <input matInput formControlName="duration" placeholder="Ex. 3 hours">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput type="text" formControlName="description"></textarea>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Cast List</mat-label>
+                    <textarea matInput formControlName="castList"
+                        placeholder="Ex. Vin Diesel, Paul Walker, ..."></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Genre List</mat-label>
+                    <mat-select formControlName="genreList" multiple>
+                        <mat-option *ngFor="let genre of genres" [value]="genre._id">{{ genre.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Tags</mat-label>
+                    <mat-select formControlName="tags" multiple>
+                      <mat-option *ngFor="let tags of tagList" [value]="tags">{{tags}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Film Status</mat-label>
+                    <mat-select formControlName="isFilm">
+                        <mat-option [value]="true">True</mat-option>
+                        <mat-option [value]="false">False</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="content mb-4">
+        <div class="d-flex justify-content-center">
+            <button [disabled]="!contentForm.valid" class="btn btn-outline-light" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy-fill" viewBox="0 0 16 16">
+                <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0H3v5.5A1.5 1.5 0 0 0 4.5 7h7A1.5 1.5 0 0 0 13 5.5V0h.086a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5H14v-5.5A1.5 1.5 0 0 0 12.5 9h-9A1.5 1.5 0 0 0 2 10.5V16h-.5A1.5 1.5 0 0 1 0 14.5v-13Z"/>
+                <path d="M3 16h10v-5.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5V16Zm9-16H4v5.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V0ZM9 1h2v4H9V1Z"/>
+              </svg>
+              | {{data ? 'Update': 'Save'}}
+            </button>
+            <button class="buton btn  btn-danger" type="button" [mat-dialog-close]="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+              </svg>
+              | Cancel
+            </button>
+        </div>
+    </div>
+</form>

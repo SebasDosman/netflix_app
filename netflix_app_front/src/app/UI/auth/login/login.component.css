@@ -1,0 +1,158 @@
+.principal-container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary);
+}
+
+.logo {
+  width: 25%;
+  margin-left: 4px;
+  margin-top: 2px;
+  max-width: 200px;
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 450px;
+  height: auto;
+  margin: auto;
+}
+
+.title {
+  color: var(--light);
+  letter-spacing: 1px;
+  justify-content: start;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-family: 'Netflix Sans Medium', sans-serif;
+  font-size: 32px;
+}
+
+.input {
+  height: 50px;
+  margin-bottom: 18px;
+  border: none;
+  padding: 20px;
+  color: var(--light);
+  background-color: var(--dark-bold);
+  font-family: 'Netflix Sans Regular', sans-serif;
+}
+
+.input::placeholder{
+  color: var(--dark-letter);
+  font-family: 'Netflix Sans Light', sans-serif;
+  font-size: 13px;
+  background-color: var(--dark-bold);
+}
+
+.input:focus {
+  background-color: var(--dark-bold);
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  font-family: 'Netflix Sans Regular', sans-serif;
+  font-size: 16px;
+  background-color: var(--red);
+}
+
+.abajo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.checkbox {
+  color: var(--dark-letter);
+  display: flex;
+  flex-direction: row;
+  font-family: 'Netflix Sans Light', sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+.check {
+  width: 15px;
+  margin-right: 4px;
+}
+
+.dere{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.help{
+  font-family: 'Netflix Sans Light', sans-serif;
+  font-size: 14px;
+  align-self: flex-end;
+  color: var(--dark-letter);
+  text-decoration: none;
+}
+
+.help:hover{
+  text-decoration: underline;
+}
+
+.registro {
+  display: flex;
+  color: var(--dark);
+  font-family: 'Netflix Sans Light', sans-serif;
+  justify-content: center;
+}
+
+.register {
+  color: var(--light);
+  text-decoration: none;
+}
+
+.register:hover {
+  text-decoration: underline;
+}
+
+
+@media(min-width: 720px) {
+  .principal-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../../../assets/fondoLogin.jpg");
+    background-size: cover;
+  }
+
+  .logo {
+    margin-top: -14px;
+    margin-left: 18px;
+  }
+
+  .formCard {
+    width: 65%;
+    height: auto;
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 53px;
+    margin-top: -10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 10em;
+  }
+
+  .title{
+    margin-left: -198px;
+  }
+
+  .form{
+    width: 90%;
+  }
+
+  .input::placeholder{
+    color: var(--dark-letter);
+    font-family: 'Netflix Sans Light', sans-serif;
+    font-size: 15px;
+  }
+}

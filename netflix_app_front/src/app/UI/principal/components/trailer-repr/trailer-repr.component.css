@@ -1,0 +1,169 @@
+/* Estilo para el contenedor */
+.container {
+    width: 100%; 
+    max-width: 100%; 
+    min-height: 100vh; 
+    max-height: 100vh;
+
+    overflow: hidden; 
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para el video */
+video {
+    width: 100vw; 
+    height: auto;
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 4vw;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+button > span, .volumeOpt > span{
+    font-size: 4vw;
+    color: white;
+    cursor: pointer;
+}
+
+.controls{
+    position        : absolute  ;
+    bottom          : 1.5vw     ;
+    display         : flex      ;
+    flex-direction  : column    ;
+
+    width: 100%;
+    padding-inline: 1vw;
+}
+
+.buttons, .leftbuttons, .rightbuttons, .middleinfo{
+    display         : flex  ;
+    flex-direction  : row   ;
+}
+
+h1{
+    font-size: 140%;
+    font-family: 'Netflix Sans Normal', sans-serif;
+    font-weight: 500;
+    user-select: none;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leftbuttons, .rightbuttons, .middleinfo{
+    width: 33.33%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftbuttons{
+    justify-content: left;
+    gap: 1vw;
+}
+
+.rightbuttons{
+    justify-content: right;
+}
+
+.middleinfo{
+    justify-content: center;
+}
+
+
+.volumeControl{
+    transform       : rotate(270deg);
+    transform-origin: 0 0           ;
+    position: relative;
+    top : -2.5vw;
+    left: -10%;
+    cursor: pointer;
+
+    height: 12px;
+    width: 15vh;
+    
+    background-color: #888484;
+}
+
+.timeline{
+    width   : 100vw;
+    position: relative;
+    bottom  : 20px;
+    padding-inline:1vw;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    border-radius: 0px;
+    height: 5px;
+    background-color: #888484;
+    cursor: pointer;
+}
+
+.inner {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background-color: transparent;
+    height: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+  
+  .inner::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: -407px 0 0 400px red;
+  }
+
+  .time{
+    color: white;
+    font-size: 90%;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+
+
+.back-arrow{
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    font-size: 3vw;
+    color: white;
+    cursor: pointer;
+}

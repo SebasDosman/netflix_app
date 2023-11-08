@@ -1,0 +1,40 @@
+.d-flex button{
+  width: 100%;
+}
+
+.content {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.content .d-flex {
+  gap: 2em;
+}
+
+
+mat-form-field {
+  width: 100%;
+}
+
+.buton {
+  background-color: var(--red);
+}
+
+.btn:disabled {
+  background-color: #424242;
+}
+
+::ng-deep .mat-focused mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: green !important;
+} 
+
+::ng-deep mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: green !important;
+}

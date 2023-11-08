@@ -1,0 +1,8 @@
+.mensaje-error{
+    color: rgb(255, 162, 0);
+    font-size: .8em;
+    height: 100%;
+    max-height: 40px;
+    width: 100%;
+    text-align: left;
+}

@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="principal-container">
+    <h1 class="title"></h1>
+
+    <div     class="notfound"
+            *ngIf="!contents || contents.length === 0">
+
+            <div class="subnotfound">
+
+                <p class="err-d">Your search for "{{ actualQuery }}" did not have any matches.</p>
+                <p class="err-d">Suggestions:</p>
+                <div class="list">
+                    <ul>
+                        <li class="err-d">Try different Keywords</li>
+                        <li class="err-d">Looking for a movie or TV show?</li>
+                        <li class="err-d">Try using a movie, TV show title, an actor or director</li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div class="box">
+
+        <app-content *ngFor="let content of contents" [content]="content"></app-content>
+    </div>
+</div>
+<app-principal-modal></app-principal-modal>
+<app-footer></app-footer>

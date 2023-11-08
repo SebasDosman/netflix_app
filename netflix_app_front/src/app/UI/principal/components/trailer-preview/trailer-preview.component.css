@@ -1,0 +1,57 @@
+.container-trailer{
+    width           : 100%          ;
+    height          : auto          ;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+
+video{
+    border-radius: 15px;
+    width: 100%;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+}
+
+.optional-data{
+
+    position: absolute;
+    right: 0;
+    color: rgba(178, 178, 178, 0.9);
+    
+    right: 6%;
+    top: 80%;
+
+    width   : 5vw;
+    height  : 5vw;
+
+    max-width: 40px;
+    max-height: 40px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.sounds{
+    border: 1px solid rgba(109, 109, 110, 0.3) ;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width   : 100%;
+    height  : 100%;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(109, 109, 110, 0.2); 
+}
+
+.sounds:hover{
+    border: 1px solid #d0cccc;
+    background-color: rgba(109, 109, 110, 0.5); 
+}
+
+.volume-icon{
+    font-size: 100%;
+}
+
+
+

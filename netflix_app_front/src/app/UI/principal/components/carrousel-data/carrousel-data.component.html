@@ -1,0 +1,21 @@
+<div class="contenedor-principal">
+    <button role="button" 
+            id="flecha-izquierda" 
+            class="flecha-izquierda"
+            (click)="move(-1)"
+            *ngIf="position() !== 0"><i class="fas fa-angle-left"></i></button>
+
+    <div class="contenedor-carousel box" [ngClass]="{'box': true}" [style.gridTemplateColumns]="gridTemplateColumns()">        
+
+            <app-content    *ngFor="let item of subcontent" 
+                            [content]="item" 
+                            class="pelicula animate__animated"
+                            [ngClass]="mover_derecha() ? 'animate__slideInRight' : 'animate__slideInLeft'"></app-content>
+    </div>
+
+    <button role="button" 
+            id="flecha-derecha" 
+            class="flecha-derecha"
+            (click)="move(+1)"
+            *ngIf="position() !== (n_conjuntos() + 1) && !subcontent?.includes( content![content?.length! - 1])"><i class="fas fa-angle-right"></i></button>
+</div>

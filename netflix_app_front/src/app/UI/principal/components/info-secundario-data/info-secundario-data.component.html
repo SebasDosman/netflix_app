@@ -1,0 +1,45 @@
+<div class="principal-container">
+
+    <section class="c_1">
+        <div class="c_1_1">
+            <span class="match">{{ matchNumber }}% Match</span>
+            <span class="date">{{ getReleaseDate()}}</span>
+            <span class="duration">{{ content.duration }}</span>
+            <span class="hd_info">HD</span>
+        </div>
+
+        <div class="c_1_2">
+            <span class="age">{{getNumberClassification()}}</span>
+            <span class="age_text">{{getMessagesClassification()}}</span>
+        </div>
+
+        <div class="c_1_3">
+            <span class="description">{{content.description}}</span>
+        </div>
+    </section>
+
+    <section class="c_2">
+
+        <div class="c_cast" *ngIf="content.castList">
+            <p class="c_2_titles">Cast:</p>
+            <a  *ngFor="let data of content.castList; let i = index" 
+                class="item item_hover"
+                [routerLink]="getLink(data)"> {{ data }}<span *ngIf="i !== (content.castList.length - 1)">,</span></a>
+            
+        </div>
+
+        <div class="c_genres" *ngIf="content.genreList">
+            <p class="c_2_titles">Genres:</p>
+            <a  *ngFor="let data of content.genreList; let i = index" 
+                class="item"> {{data.name}}<span *ngIf="i !== (content.genreList.length - 1)">,</span></a>
+        </div>
+
+        <div class="c_tags" *ngIf="content.tags">
+
+            <p class="c_2_titles tag_title">This movie is:</p>
+            <a  *ngFor="let data of content.tags; let i = index" 
+                class="item item_hover"
+                [routerLink]="getLink(data)"> {{data}}<span *ngIf="i !== (content.tags.length - 1)">,</span></a>
+        </div>
+    </section>
+</div>

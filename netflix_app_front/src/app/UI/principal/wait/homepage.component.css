@@ -1,0 +1,11 @@
+.principal {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary);
+  color: var(--light);
+  box-sizing: border-box;
+  line-height: 1.4;
+  font-family: var(--font);
+}
